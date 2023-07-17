@@ -6,24 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoldSmith Clone</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+    screens: {
+      '2xl': {'max': '1535px'},
+      // => @media (max-width: 1535px) { ... }
+
+      'xl': {'max': '1279px'},
+      // => @media (max-width: 1279px) { ... }
+
+      'lg': {'max': '1023px'},
+      // => @media (max-width: 1023px) { ... }
+
+      'md': {'max': '800px'},
+      // => @media (max-width: 767px) { ... }
+
+      'sm': {'max': '450px'},
+      // => @media (max-width: 639px) { ... }
+    },
+    
+    extend: {},
+  },
+  plugins: [],
+}
+    </script>
 </head>
 
 <body class="bg-slate-50">
-    <header class="flex justify-between items-center py-8 px-12">
+    <header class="flex justify-between items-center py-8 px-12 sm:px-4">
         <section>
-            <img class="w-40 h-auto" src="/images/logo.svg" alt="">
+            <img class="w-40 h-auto sm:w-30" src="/images/logo.svg" alt="">
         </section>
-        <section class="flex gap-12 justify-between items-center">
+        <section class="flex gap-12 justify-between items-center sm:hidden">
             <img class="w-36 hover:cursor-pointer" src="/images/charm-menu-staff-students.svg" alt="">
             <img class="w-28 hover:cursor-pointer" src="/images/charm-menu-search.svg" alt="">
             <img class="w-24 hover:cursor-pointer" src="/images/charm-menu.svg" alt="">
         </section>
+        <section class="hidden sm:flex items-center gap-6">
+            <img class="w-8" src="/images/mortarboard.png (1).png" alt="">
+            <img class="w-8" src="/images/loupe.png (1).png" alt="">
+            <img class="w-8" src="/images/more.png" alt="">
+        </section>
     </header>
 
     <main>
-        <article class=" w-full place-content-center bg-right bg-cover py-32 mb-12" style="background-image: url(/images/clearing-homepage-1-compressed.jpeg);">
-            <section class="flex flex-col justify-center items-center">
-                <img class="w-[36rem]" src="images/CLEARED[79].svg" alt="">
+        <article class=" w-full place-content-center bg-right bg-cover py-32 mb-12 sm:py-20 sm:h-56  sm:relative" style="background-image: url(/images/clearing-homepage-1-compressed.jpeg);">
+            <section class="flex flex-col justify-center items-center sm:absolute">
+                <img class="w-[36rem] sm:w-24" src="images/CLEARED[79].svg" alt="">
                 <button class="bg-yellow-400 border-2 border-gray-400 border-b-4 border-b-black px-14 py-4 font-semibold">Apply now through
                     Clearing</button>
             </section>
@@ -286,20 +316,20 @@
     <footer class="bg-[#333] text-white py-12 px-12 flex flex-col gap-12">
         <article class="flex justify-between">
             <section class="flex flex-col gap-4">
-                <div class="flex flex-col font-semibold">
-                    <p><a href="#">About Us</a></p>
-                    <p><a href="#">Contact Us</a></p>
-                    <p><a href="#">Find Us</a></p>
-                    <p><a href="#">Jobs</a></p>
+                <div class="flex flex-col font-semibold ">
+                    <p class="hover:text-yellow-500"><a href="#">About Us</a></p>
+                    <p class="hover:text-yellow-500"><a href="#">Contact Us</a></p>
+                    <p class="hover:text-yellow-500"><a href="#">Find Us</a></p>
+                    <p class="hover:text-yellow-500"><a href="#">Jobs</a></p>
                 </div>
-                <p class="font-medium text-slate-300 text-xs sm:hidden">&copy; 2023 Goldsmiths, University of London</p>
+                <p class="font-semibold text-slate-300 text-xs sm:hidden">&copy; 2023 Goldsmiths, University of London</p>
             </section>
 
-            <section class="flex flex-col font-medium ">
-                <p><a href="#">Accessibility Statement</a></p>
-                <p><a href="#">Cookie use</a></p>
-                <p><a href="#">Copy right and disclaimer</a></p>
-                <p><a href="#">Slavery and human trafficking statement</a></p>
+            <section class="flex flex-col font-semibold ">
+                <p class="hover:text-yellow-500"><a href="#">Accessibility Statement</a></p>
+                <p class="hover:text-yellow-500"><a href="#">Cookie use</a></p>
+                <p class="hover:text-yellow-500"><a href="#">Copy right and disclaimer</a></p>
+                <p class="hover:text-yellow-500"><a href="#">Slavery and human trafficking statement</a></p>
             </section>
 
         <p class=""><a class=" font-medium border-t-2 pt-3" href="#">Admin login</a></p>
@@ -312,7 +342,7 @@
                 <img class="w-6" src="/images/instagram.png" alt="">
                 <img class="w-6" src="/images/youtube (1).png" alt="">
             </section>
-            <button class="font-medium text-xs">Back to top</button>
+            <button class="text-xs font-semibold hover:text-yellow-500">Back to top</button>
         </section>
     </footer>
 </body>
